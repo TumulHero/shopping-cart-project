@@ -24,12 +24,12 @@
                      </div>
 
                      <div class="col-md-5 center-item">
-                        <div class="input-group number-spinner">
-                           <button class="btn btn-default"><i class="fas fa-minus"></i></button>
-                           <input type="text" class="form-control text-center" value="1">
-                           <button class="btn btn-default"><i class="fas fa-plus"></i></button>
+                        <div class="input-group       number-spinner">
+                           <button  class="btn btn-default"><i id="minusBtn" class="fas fa-minus"></i></button>
+                           <input id="iphoneInput" type="text" class="form-control text-center" value="1">
+                           <button class="btn btn-default"><i id="plusBtn" class="fas fa-plus"></i></button>
                         </div>
-                        <h5>$1219</h5>
+                        <h5>$<span id="currentDollar">1219</span></h5>
                         <img src="images/remove.png" alt="" class="remove-item">
                      </div>
                   </div>
@@ -43,12 +43,12 @@
                      </div>
                      <div class="col-md-5 center-item">
                         <div class="input-group number-spinner">
-                           <button class="btn btn-default"><i class="fas fa-minus"></i></button>
-                           <input type="text" class="form-control text-center" value="1">
-                           <button class="btn btn-default"><i class="fas fa-plus"></i></button>
+                           <button class="btn btn-default"><i id="minusBtn2" class="fas fa-minus"></i></button>
+                           <input id="iphoneInput2" type="text" class="form-control text-center" value="1">
+                           <button id="plusBtn2" class="btn btn-default"><i class="fas fa-plus"></i></button>
 
                         </div>
-                        <h5>$59</h5>
+                        <h5>$<span id="cartDollar">59</span></h5>
                         <img src="images/remove.png" alt="" class="remove-item">
                      </div>
                   </div>
@@ -64,9 +64,9 @@
                      </div>
 
                      <div class="col-md-4 status">
-                        <h5>$1,278</h5>
+                        <h5>$<span id="Subtotal">1278</span></h5>
                         <h5>$0</h5>
-                        <h5>$1,278</h5>
+                        <h5>$<span id="Total">1278</span></h5>
                      </div>
                   </div>
                </div>
@@ -77,6 +77,150 @@
          </div>
       </div>
    </section>
+
+
+   <script>
+
+      // minusBtn 
+
+
+            var minusBtn=document.getElementById('minusBtn')
+            minusBtn.addEventListener('click',function(){
+            var iphoneValue= document.getElementById('iphoneInput').value
+            var currentValue=iphoneValue-1
+            document.getElementById('iphoneInput').value=currentValue
+
+
+
+            var currentDollar= document.getElementById('currentDollar').innerText
+            currentBalance=currentDollar-1219
+            document.getElementById('currentDollar').innerText=currentBalance
+
+
+
+            var subtotal= document.getElementById('Subtotal').innerText
+            var subtotalNumber=parseInt(subtotal)
+            var total=subtotalNumber-1219
+            document.getElementById('Subtotal').innerText=total
+
+
+
+            var totalbalance=document.getElementById('Total').innerText
+            var totalNumber=parseInt(totalbalance)
+            totalValue=totalNumber=total
+            document.getElementById('Total').innerText=totalValue;
+
+
+         
+       })
+        
+
+      //  plus btn 
+
+            var plusBtn=document.getElementById('plusBtn')
+            plusBtn.addEventListener('click',function(){
+            var iphoneValue= document.getElementById('iphoneInput').value
+            var currentNumber=parseInt(iphoneValue)
+            var currentValue=currentNumber+1
+            document.getElementById('iphoneInput').value=currentValue
+
+
+
+
+            var Dollar= document.getElementById('currentDollar').innerText
+            current=1219*currentValue
+            document.getElementById('currentDollar').innerText=current
+
+
+
+
+            var subtotal= document.getElementById('Subtotal').innerText
+            var subtotalNumber=parseInt(subtotal)
+            var total=subtotalNumber+1219
+            document.getElementById('Subtotal').innerText=total
+         
+
+
+
+            var totalbalance=document.getElementById('Total').innerText
+            var totalNumber=parseInt(totalbalance)
+            totalValue=totalNumber=total
+            document.getElementById('Total').innerText=totalValue;
+            
+       })
+
+      // minusBtn 2
+      
+
+            var minusBtn2=document.getElementById('minusBtn2')
+            minusBtn2.addEventListener('click',function(){
+            var iphoneValue= document.getElementById('iphoneInput2').value
+            var currentValue=iphoneValue-1
+            document.getElementById('iphoneInput2').value=currentValue
+
+
+
+            var currentDollar= document.getElementById('cartDollar').innerText
+            currentBalance=currentDollar-59
+            document.getElementById('cartDollar').innerText=currentBalance
+
+
+
+
+            var subtotal= document.getElementById('Subtotal').innerText
+            var subtotalNumber=parseInt(subtotal)
+            var total=subtotalNumber-59
+            document.getElementById('Subtotal').innerText=total
+
+
+
+
+            var totalbalance=document.getElementById('Total').innerText
+            var totalNumber=parseInt(totalbalance)
+            totalValue=totalNumber=total
+            document.getElementById('Total').innerText=totalValue;
+                  
+            })
+        
+
+      //  plus btn 2
+
+
+         var plusBtn2=document.getElementById('plusBtn2')
+         plusBtn2.addEventListener('click',function(){
+         var iphoneValue= document.getElementById('iphoneInput2').value
+         var currentNumber=parseInt(iphoneValue)
+         var currentValue=currentNumber+1
+         document.getElementById('iphoneInput2').value=currentValue
+
+
+
+         var Dollar= document.getElementById('cartDollar').innerText
+         current=59*currentValue
+         document.getElementById('cartDollar').innerText=current
+
+         
+
+         var subtotal= document.getElementById('Subtotal').innerText
+         var subtotalNumber=parseInt(subtotal)
+         var total=subtotalNumber+59
+         document.getElementById('Subtotal').innerText=total
+            
+
+
+
+         var totalbalance=document.getElementById('Total').innerText
+         var totalNumber=parseInt(totalbalance)
+         totalValue=totalNumber=total
+         document.getElementById('Total').innerText=totalValue;
+       })
+       
+     
+      
+
+      
+      
+   </script>
 </body>
 
 </html>
